@@ -17,7 +17,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- TODO (03) Bind views to the BindingAdapters you created in BindingUtils. -->
         <ImageView
             android:id="@+id/quality_image"
             android:layout_width="@dimen/icon_size"
@@ -28,6 +27,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:sleepImage="@{sleep}"
             tools:srcCompat="@drawable/ic_sleep_5" />
 
         <TextView
@@ -37,6 +37,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            app:sleepDurationFormatted="@{sleep}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/quality_image"
             app:layout_constraintTop_toTopOf="@+id/quality_image"
@@ -47,6 +48,7 @@
             android:layout_width="0dp"
             android:layout_height="20dp"
             android:layout_marginTop="8dp"
+            app:sleepQualityText="@{sleep}"
             app:layout_constraintEnd_toEndOf="@+id/sleep_length"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/sleep_length"
