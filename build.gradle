@@ -32,8 +32,8 @@ buildscript {
     }
 
     repositories {
-        google()
         mavenCentral()
+        google()
     }
 
     dependencies {
@@ -42,6 +42,7 @@ buildscript {
         classpath "com.android.tools.build:gradle:$version_gradle"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$version_kotlin"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -49,8 +50,8 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
         mavenCentral()
+        google()
     }
 }
 

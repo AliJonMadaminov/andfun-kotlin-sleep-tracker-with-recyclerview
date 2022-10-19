@@ -38,9 +38,14 @@ class SleepDetailViewModel(
      */
     val database = dataSource
 
+    /*
+    /** Coroutine setup variables */
 
     /**
      */
+
+    private val viewModelJob = Job()
+    */
 
     private val night = MediatorLiveData<SleepNight>()
 
@@ -63,11 +68,16 @@ class SleepDetailViewModel(
      */
     val navigateToSleepTracker: LiveData<Boolean?>
         get() = _navigateToSleepTracker
-
+    /*
     /**
      *
      */
 
+    override fun onCleared() {
+        super.onCleared()
+        viewModelJob.cancel()
+    }
+    */
 
     /**
      * Call this immediately after navigating to [SleepTrackerFragment]
