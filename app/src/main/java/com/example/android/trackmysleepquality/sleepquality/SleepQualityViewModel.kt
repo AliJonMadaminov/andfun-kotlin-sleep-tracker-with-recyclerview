@@ -19,6 +19,7 @@ package com.example.android.trackmysleepquality.sleepquality
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.android.trackmysleepquality.database.SleepDatabaseDao
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.*
@@ -31,9 +32,6 @@ import kotlinx.coroutines.*
 class SleepQualityViewModel(
         private val sleepNightKey: Long = 0L,
         val database: SleepDatabaseDao) : ViewModel() {
-
-    /*
-    /** Coroutine setup variables */
 
     /**
      * viewModelJob allows us to cancel all coroutines started by this ViewModel.
@@ -48,10 +46,7 @@ class SleepQualityViewModel(
      *
      * By default, all coroutines started in uiScope will launch in [Dispatchers.Main] which is
      * the main thread on Android. This is a sensible default because most coroutines started by
-     * a [ViewModel] update the UI after performing some processing.
      */
-    private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
-    */
 
     /**
      * Variable that tells the fragment whether it should navigate to [SleepTrackerFragment].
@@ -69,14 +64,7 @@ class SleepQualityViewModel(
 
     /*
     /**
-     * Cancels all coroutines when the ViewModel is cleared, to cleanup any pending work.
      *
-     * onCleared() gets called when the ViewModel is destroyed.
-     */
-    override fun onCleared() {
-        super.onCleared()
-        viewModelJob.cancel()
-    }
      */
 
     /**
